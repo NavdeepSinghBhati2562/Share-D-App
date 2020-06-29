@@ -100,7 +100,7 @@ public class FileListAdapter
             List<File> referencedDirectoryList = new ArrayList<>();
             DocumentFile defaultFolder = FileUtils.getApplicationDirectory(getContext());
 
-            lister.offerObliged(this, new DirectoryHolder(defaultFolder, getContext().getString(R.string.text_receivedFiles), R.drawable.ic_trebleshot_rounded_white_24dp_static));
+            lister.offerObliged(this, new DirectoryHolder(defaultFolder, getContext().getString(R.string.text_receivedFiles), R.drawable.ic_stat_share_large));
 
             lister.offerObliged(this, new PublicDirectoryHolder(Environment
                     .getExternalStoragePublicDirectory(Environment.DIRECTORY_DCIM),

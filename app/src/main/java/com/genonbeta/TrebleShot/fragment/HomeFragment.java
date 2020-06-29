@@ -35,9 +35,10 @@ public class HomeFragment
         mViewPager = view.findViewById(R.id.layout_home_view_pager);
         mAdapter = new SmartFragmentPagerAdapter(getContext(), getChildFragmentManager());
 
-        mAdapter.add(new SmartFragmentPagerAdapter.StableItem(0, TransferGroupListFragment.class, null));
-        mAdapter.add(new SmartFragmentPagerAdapter.StableItem(1, FileExplorerFragment.class, null));
-        mAdapter.add(new SmartFragmentPagerAdapter.StableItem(2, TextStreamListFragment.class, null));
+        mAdapter.add(new SmartFragmentPagerAdapter.StableItem(0, sendReceiveFragment.class, null));
+        mAdapter.add(new SmartFragmentPagerAdapter.StableItem(1, TransferGroupListFragment.class, null));
+        mAdapter.add(new SmartFragmentPagerAdapter.StableItem(2, FileExplorerFragment.class, null));
+      //  mAdapter.add(new SmartFragmentPagerAdapter.StableItem(3, TextStreamListFragment.class, null));
 
         mAdapter.createTabs(bottomNavigationView);
         mViewPager.setAdapter(mAdapter);

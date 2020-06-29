@@ -4,6 +4,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
@@ -65,6 +66,7 @@ public class ConnectionManagerActivity
     private ProgressBar mProgressBar;
     private String mTitleProvided;
     private RequestType mRequestType = RequestType.RETURN_RESULT;
+
 
     private final NetworkDeviceSelectedListener mDeviceSelectionListener = new NetworkDeviceSelectedListener()
     {
@@ -224,10 +226,13 @@ public class ConnectionManagerActivity
     @Override
     public void onBackPressed()
     {
-        if (getShowingFragment() instanceof OptionsFragment)
-            super.onBackPressed();
-        else
-            setFragment(AvailableFragment.Options);
+
+        startActivity(new Intent(this,HomeActivity.class));
+        finish();
+//        if (getShowingFragment() instanceof OptionsFragment)
+//            super.onBackPressed();
+//        else
+//            setFragment(AvailableFragment.Options);
     }
 
     @Override
@@ -382,6 +387,7 @@ public class ConnectionManagerActivity
         public static final int REQUEST_CHOOSE_DEVICE = 100;
 
         private NetworkDeviceSelectedListener mListener;
+        SharedPreferences preferences;
 
         @Nullable
         @Override
@@ -389,6 +395,7 @@ public class ConnectionManagerActivity
         {
             View view = inflater.inflate(R.layout.layout_connection_options_fragment, container, false);
 
+            preferences = this.getActivity().getSharedPreferences("shared", Context.MODE_PRIVATE);
             View.OnClickListener listener = new View.OnClickListener()
             {
                 @Override
@@ -428,6 +435,15 @@ public class ConnectionManagerActivity
                             .startShowing();
                 }
             });
+
+            if (preferences.getBoolean("sendReceive",true)==true)
+            {
+                updateFragment(AvailableFragment.CreateHotspot);
+
+            }else if (preferences.getBoolean("sendReceive",true)==false)
+            {
+                startCodeScanner();
+            }
 
             return view;
         }
@@ -472,4 +488,5 @@ public class ConnectionManagerActivity
             mListener = listener;
         }
     }
+
 }

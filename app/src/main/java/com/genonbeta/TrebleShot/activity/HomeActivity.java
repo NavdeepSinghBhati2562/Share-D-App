@@ -81,7 +81,7 @@ public class HomeActivity
         mActionMode = findViewById(R.id.content_powerful_action_mode);
         mNavigationView = findViewById(R.id.nav_view);
         mDrawerLayout = findViewById(R.id.drawer_layout);
-        mTrustZoneToggle = mNavigationView.getMenu().findItem(R.id.menu_activity_trustzone);
+      //  mTrustZoneToggle = mNavigationView.getMenu().findItem(R.id.menu_activity_trustzone);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, mDrawerLayout, toolbar, R.string.text_navigationDrawerOpen, R.string.text_navigationDrawerClose);
         mDrawerLayout.addDrawerListener(toggle);
         toggle.syncState();
@@ -106,8 +106,8 @@ public class HomeActivity
             }
         });
 
-        if (UpdateUtils.hasNewVersion(this))
-            highlightUpdater(getDefaultPreferences().getString("availableVersion", null));
+//        if (UpdateUtils.hasNewVersion(this))
+//            highlightUpdater(getDefaultPreferences().getString("availableVersion", null));
 
         if (!AppUtils.isLatestChangeLogSeen(this)) {
             new AlertDialog.Builder(this)
@@ -143,13 +143,13 @@ public class HomeActivity
                     .show();
         }
 
-        if (Keyword.Flavor.googlePlay.equals(AppUtils.getBuildFlavor())) {
-            MenuItem donateItem = mNavigationView.getMenu()
-                    .findItem(R.id.menu_activity_main_donate);
-
-            if (donateItem != null)
-                donateItem.setVisible(true);
-        }
+//        if (Keyword.Flavor.googlePlay.equals(AppUtils.getBuildFlavor())) {
+//            MenuItem donateItem = mNavigationView.getMenu()
+//                    .findItem(R.id.menu_activity_main_donate);
+//
+//            if (donateItem != null)
+//                donateItem.setVisible(true);
+//        }
     }
 
     @Override
@@ -215,51 +215,56 @@ public class HomeActivity
     {
         if (mChosenMenuItemId == 0) {
             // Do nothing
-        } else if (R.id.menu_activity_main_manage_devices == mChosenMenuItemId) {
-            startActivity(new Intent(this, ManageDevicesActivity.class));
-        } else if (R.id.menu_activity_main_about == mChosenMenuItemId) {
-            startActivity(new Intent(this, AboutActivity.class));
-        } else if (R.id.menu_activity_main_send_application == mChosenMenuItemId) {
-            new ShareAppDialog(HomeActivity.this)
-                    .show();
-        } else if (R.id.menu_activity_main_web_share == mChosenMenuItemId) {
-            startActivity(new Intent(this, WebShareActivity.class));
-        } else if (R.id.menu_activity_main_preferences == mChosenMenuItemId) {
-            startActivity(new Intent(this, PreferencesActivity.class));
-        } else if (R.id.menu_activity_main_exit == mChosenMenuItemId) {
-            exitApp();
-        } else if (R.id.menu_activity_main_donate == mChosenMenuItemId) {
-            try {
-                startActivity(new Intent(this, Class.forName("com.genonbeta.TrebleShot.activity.DonationActivity")));
-            } catch (ClassNotFoundException e) {
-                e.printStackTrace();
-            }
-        } else if (R.id.menu_activity_main_dev_survey == mChosenMenuItemId) {
-            AlertDialog.Builder builder = new AlertDialog.Builder(this);
-            builder.setTitle(R.string.text_developmentSurvey);
-            builder.setMessage(R.string.text_developmentSurveySummary);
-            builder.setNegativeButton(R.string.genfw_uwg_later, null);
-            builder.setPositiveButton(R.string.butn_temp_doIt, new DialogInterface.OnClickListener()
-            {
-                @Override
-                public void onClick(DialogInterface dialog, int which)
-                {
-                    try {
-                        startActivity(new Intent(Intent.ACTION_VIEW).setData(Uri.parse(
-                                "https://docs.google.com/forms/d/e/1FAIpQLScmwX923MACmHvZTpEyZMDCxRQjrd8b67u9p9MOjV1qFVp-_A/viewform?usp=sf_link"
-                        )));
-                    } catch (ActivityNotFoundException e) {
-                        Toast.makeText(HomeActivity.this, R.string.mesg_temp_noBrowser,
-                                Toast.LENGTH_SHORT).show();
-                    }
-                }
-            });
-            builder.show();
-        } else if (R.id.menu_activity_feedback == mChosenMenuItemId) {
-            AppUtils.createFeedbackIntent(HomeActivity.this);
-        } else if (R.id.menu_activity_trustzone == mChosenMenuItemId) {
-            toggleTrustZone();
         }
+        else if (R.id.settingBtn == mChosenMenuItemId)
+        {
+            startActivity(new Intent(this, PreferencesActivity.class));
+        }
+//        else if (R.id.menu_activity_main_manage_devices == mChosenMenuItemId) {
+//            startActivity(new Intent(this, ManageDevicesActivity.class));
+//        } else if (R.id.menu_activity_main_about == mChosenMenuItemId) {
+//            startActivity(new Intent(this, AboutActivity.class));
+//        } else if (R.id.menu_activity_main_send_application == mChosenMenuItemId) {
+//            new ShareAppDialog(HomeActivity.this)
+//                    .show();
+//        } else if (R.id.menu_activity_main_web_share == mChosenMenuItemId) {
+//            startActivity(new Intent(this, WebShareActivity.class));
+//        } else if (R.id.menu_activity_main_preferences == mChosenMenuItemId) {
+//            startActivity(new Intent(this, PreferencesActivity.class));
+//        } else if (R.id.menu_activity_main_exit == mChosenMenuItemId) {
+//            exitApp();
+//        } else if (R.id.menu_activity_main_donate == mChosenMenuItemId) {
+//            try {
+//                startActivity(new Intent(this, Class.forName("com.genonbeta.TrebleShot.activity.DonationActivity")));
+//            } catch (ClassNotFoundException e) {
+//                e.printStackTrace();
+//            }
+//        } else if (R.id.menu_activity_main_dev_survey == mChosenMenuItemId) {
+//            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+//            builder.setTitle(R.string.text_developmentSurvey);
+//            builder.setMessage(R.string.text_developmentSurveySummary);
+//            builder.setNegativeButton(R.string.genfw_uwg_later, null);
+//            builder.setPositiveButton(R.string.butn_temp_doIt, new DialogInterface.OnClickListener()
+//            {
+//                @Override
+//                public void onClick(DialogInterface dialog, int which)
+//                {
+//                    try {
+//                        startActivity(new Intent(Intent.ACTION_VIEW).setData(Uri.parse(
+//                                "https://docs.google.com/forms/d/e/1FAIpQLScmwX923MACmHvZTpEyZMDCxRQjrd8b67u9p9MOjV1qFVp-_A/viewform?usp=sf_link"
+//                        )));
+//                    } catch (ActivityNotFoundException e) {
+//                        Toast.makeText(HomeActivity.this, R.string.mesg_temp_noBrowser,
+//                                Toast.LENGTH_SHORT).show();
+//                    }
+//                }
+//            });
+//            builder.show();
+//        } else if (R.id.menu_activity_feedback == mChosenMenuItemId) {
+//            AppUtils.createFeedbackIntent(HomeActivity.this);
+//        } else if (R.id.menu_activity_trustzone == mChosenMenuItemId) {
+//            toggleTrustZone();
+//        }
 
         mChosenMenuItemId = 0;
     }
@@ -267,20 +272,20 @@ public class HomeActivity
     private void createHeaderView()
     {
         View headerView = mNavigationView.getHeaderView(0);
-        MenuItem surveyItem = mNavigationView.getMenu().findItem(R.id.menu_activity_main_dev_survey);
+      //  MenuItem surveyItem = mNavigationView.getMenu().findItem(R.id.menu_activity_main_dev_survey);
         Configuration configuration = getApplication().getResources().getConfiguration();
 
-        if (Build.VERSION.SDK_INT >= 24) {
-            LocaleList list = configuration.getLocales();
-
-            if (list.size() > 0)
-                for (int pos = 0; pos < list.size(); pos++)
-                    if (list.get(pos).toLanguageTag().startsWith("en")) {
-                        surveyItem.setVisible(true);
-                        break;
-                    }
-        } else
-            surveyItem.setVisible(configuration.locale.toString().startsWith("en"));
+//        if (Build.VERSION.SDK_INT >= 24) {
+//            LocaleList list = configuration.getLocales();
+//
+//            if (list.size() > 0)
+//                for (int pos = 0; pos < list.size(); pos++)
+//                    if (list.get(pos).toLanguageTag().startsWith("en")) {
+//                        surveyItem.setVisible(true);
+//                        break;
+//                    }
+//        } else
+//            surveyItem.setVisible(configuration.locale.toString().startsWith("en"));
 
         if (headerView != null) {
             NetworkDevice localDevice = AppUtils.getLocalDevice(getApplicationContext());
@@ -288,10 +293,10 @@ public class HomeActivity
             ImageView imageView = headerView.findViewById(R.id.layout_profile_picture_image_default);
             ImageView editImageView = headerView.findViewById(R.id.layout_profile_picture_image_preferred);
             TextView deviceNameText = headerView.findViewById(R.id.header_default_device_name_text);
-            TextView versionText = headerView.findViewById(R.id.header_default_device_version_text);
+           // TextView versionText = headerView.findViewById(R.id.header_default_device_version_text);
 
             deviceNameText.setText(localDevice.nickname);
-            versionText.setText(localDevice.versionName);
+          //  versionText.setText(localDevice.versionName);
             loadProfilePictureInto(localDevice.nickname, imageView);
 
             editImageView.setOnClickListener(new View.OnClickListener()
@@ -311,11 +316,11 @@ public class HomeActivity
         return mActionMode;
     }
 
-    private void highlightUpdater(String availableVersion)
-    {
-        MenuItem item = mNavigationView.getMenu().findItem(R.id.menu_activity_main_about);
-        item.setTitle(R.string.text_newVersionAvailable);
-    }
+//    private void highlightUpdater(String availableVersion)
+//    {
+//        MenuItem item = mNavigationView.getMenu().findItem(R.id.menu_activity_main_about);
+//        item.setTitle(R.string.text_newVersionAvailable);
+//    }
 
     public void requestTrustZoneStatus()
     {

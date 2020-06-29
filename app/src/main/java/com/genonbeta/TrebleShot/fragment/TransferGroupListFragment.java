@@ -81,14 +81,14 @@ public class TransferGroupListFragment
         setDefaultPaddingDecorationSize(getResources().getDimension(R.dimen.padding_list_content_parent_layout));
     }
 
-    @Override
-    protected RecyclerView onListView(View mainContainer, ViewGroup listViewContainer)
-    {
-        View adaptedView = getLayoutInflater().inflate(R.layout.layout_transfer_group_list, null, false);
-        ((ViewGroup) mainContainer).addView(adaptedView);
-
-        return super.onListView(mainContainer, (FrameLayout) adaptedView.findViewById(R.id.fragmentContainer));
-    }
+//    @Override
+//    protected RecyclerView onListView(View mainContainer, ViewGroup listViewContainer)
+//    {
+//        View adaptedView = getLayoutInflater().inflate(R.layout.layout_transfer_group_list, null, false);
+//        ((ViewGroup) mainContainer).addView(adaptedView);
+//
+//        return super.onListView(mainContainer, (FrameLayout) adaptedView.findViewById(R.id.fragmentContainer));
+//    }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState)
@@ -98,28 +98,28 @@ public class TransferGroupListFragment
         setEmptyImage(R.drawable.ic_compare_arrows_white_24dp);
         setEmptyText(getString(R.string.text_listEmptyTransfer));
 
-        View viewSend = view.findViewById(R.id.sendLayoutButton);
-        View viewReceive = view.findViewById(R.id.receiveLayoutButton);
-
-        viewSend.setOnClickListener(new View.OnClickListener()
-        {
-            @Override
-            public void onClick(View v)
-            {
-                startActivity(new Intent(getContext(), ContentSharingActivity.class));
-            }
-        });
-
-        viewReceive.setOnClickListener(new View.OnClickListener()
-        {
-            @Override
-            public void onClick(View v)
-            {
-                startActivity(new Intent(getContext(), ConnectionManagerActivity.class)
-                        .putExtra(ConnectionManagerActivity.EXTRA_ACTIVITY_SUBTITLE, getString(R.string.text_receive))
-                        .putExtra(ConnectionManagerActivity.EXTRA_REQUEST_TYPE, ConnectionManagerActivity.RequestType.MAKE_ACQUAINTANCE.toString()));
-            }
-        });
+//        View viewSend = view.findViewById(R.id.sendLayoutButton);
+//        View viewReceive = view.findViewById(R.id.receiveLayoutButton);
+//
+//        viewSend.setOnClickListener(new View.OnClickListener()
+//        {
+//            @Override
+//            public void onClick(View v)
+//            {
+//                startActivity(new Intent(getContext(), ContentSharingActivity.class));
+//            }
+//        });
+//
+//        viewReceive.setOnClickListener(new View.OnClickListener()
+//        {
+//            @Override
+//            public void onClick(View v)
+//            {
+//                startActivity(new Intent(getContext(), ConnectionManagerActivity.class)
+//                        .putExtra(ConnectionManagerActivity.EXTRA_ACTIVITY_SUBTITLE, getString(R.string.text_receive))
+//                        .putExtra(ConnectionManagerActivity.EXTRA_REQUEST_TYPE, ConnectionManagerActivity.RequestType.MAKE_ACQUAINTANCE.toString()));
+//            }
+//        });
     }
 
     @Override
@@ -215,7 +215,7 @@ public class TransferGroupListFragment
     @Override
     public int getIconRes()
     {
-        return R.drawable.ic_swap_vert_white_24dp;
+        return R.drawable.ic_filter_list_black_24dp;
     }
 
     @Override

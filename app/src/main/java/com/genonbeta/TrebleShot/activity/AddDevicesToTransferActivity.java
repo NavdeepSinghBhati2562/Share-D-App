@@ -108,6 +108,7 @@ public class AddDevicesToTransferActivity extends Activity
         }
 
         resetStatusViews();
+
     }
 
     @Override
@@ -274,6 +275,7 @@ public class AddDevicesToTransferActivity extends Activity
                 startConnectionManagerActivity();
             }
         });
+        mActionButton.performClick();
     }
 
     private void startConnectionManagerActivity()
