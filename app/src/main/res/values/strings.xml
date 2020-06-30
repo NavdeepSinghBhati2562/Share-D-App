@@ -430,7 +430,7 @@
     <string name="text_introMakeItYours">Make it yours</string>
     <string name="text_introSetUpPermissions">Set up permissions</string>
     <string name="text_introAllSet">All set!</string>
-    <string name="text_introSetUpProfile">Your Profile \n(Shown when you Perform Transfer)</string>
+    <string name="text_introSetUpProfile">Create Your Profile</string>
     <string name="mesg_openFailure">Can not view \"%s\"</string>
     <string name="text_connectionTest">Connection test - %s</string>
     <string name="butn_connectionTest">Connection test</string>

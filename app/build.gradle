@@ -33,11 +33,11 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.genonbeta.TrebleShot"
+        applicationId "com.nsbfilesharing.ShareD"
         minSdkVersion 16
         targetSdkVersion 28
-        versionCode 98
-        versionName "1.4.2"
+        versionCode 1
+        versionName "1.0.0"
 
         vectorDrawables {
             useSupportLibrary = true
