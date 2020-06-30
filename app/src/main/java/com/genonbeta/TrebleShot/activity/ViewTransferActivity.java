@@ -516,10 +516,14 @@ public class ViewTransferActivity
 
         mToggleBrowserShare.setTitle(mGroup.isServedOnWeb ? R.string.butn_hideOnBrowser
                 : R.string.butn_shareOnBrowser);
-        mToggleBrowserShare.setVisible(hasOutgoing || mGroup.isServedOnWeb);
-        mWebShareShortcut.setVisible(hasOutgoing && mGroup.isServedOnWeb);
-        mCnTestMenu.setVisible(hasAnyFiles);
-        mAddDeviceMenu.setVisible(hasOutgoing);
+//        mToggleBrowserShare.setVisible(hasOutgoing || mGroup.isServedOnWeb);
+//        mWebShareShortcut.setVisible(hasOutgoing && mGroup.isServedOnWeb);
+//        mCnTestMenu.setVisible(hasAnyFiles);
+//        mAddDeviceMenu.setVisible(hasOutgoing);
+        mToggleBrowserShare.setVisible(false);
+        mWebShareShortcut.setVisible(false);
+        mCnTestMenu.setVisible(false);
+        mAddDeviceMenu.setVisible(false);
         mRetryMenu.setVisible(hasIncoming);
         mShowFilesMenu.setVisible(hasIncoming);
 

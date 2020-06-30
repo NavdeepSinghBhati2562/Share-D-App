@@ -7,7 +7,7 @@
 
             <item
                 android:id="@+id/settingBtn"
-                android:icon="@drawable/ic_devices_white_24dp"
+                android:icon="@drawable/ic_settings_white_24dp"
                 android:orderInCategory="1"
                 android:title="@string/butn_settings" />
 

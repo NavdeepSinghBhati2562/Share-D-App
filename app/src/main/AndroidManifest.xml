@@ -20,6 +20,11 @@
             android:label="@string/text_appName"
             android:launchMode="singleTask"
             android:theme="@style/Theme.TrebleShot.NoActionBar">
+
+        </activity>
+        <activity android:name=".activity.SplashActivity"
+            android:launchMode="singleTask"
+            android:theme="@style/Theme.TrebleShot.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -106,7 +111,7 @@
 
         <activity
             android:name=".activity.PreferencesActivity"
-            android:label="@string/text_preferences" />
+            android:label="@string/butn_settings" />
 
         <activity
             android:name=".activity.TextEditorActivity"
