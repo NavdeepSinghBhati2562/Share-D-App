@@ -1,12 +1,12 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
     Meanings of prefixes:
     butn_ : text indicates any kind of button like Button, MenuItem.title, possibly should be short
     ques_ : in that kind of text a question mark should exist
     mesg_ : text used for Toast, Snackbar, ProgressDialog and anything that isn't in control of user
     text_ : any kind of text that doesn't belong to the prefixes above
     mode_ : these are not actual text strings. They illustrate more than one text items together and possibly are not translatable
---><resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+-->
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
     <string name="text_appName" translatable="false">Share D</string>
     <string name="text_navigationDrawerOpen">Open navigation drawer</string>n
     <string name="text_navigationDrawerClose">Close navigation drawer</string>
@@ -477,4 +477,13 @@
     <string name="text_send_receive">Send Receive</string>
     <string name="text_share_files_with_share_d">Share Files With Share D</string>
     <string name="text_make_sharing_easy_with_share_d">Make Sharing Easy With Share D</string>
+    <string name="text_aboutUsSummary">We are a small team of visionary developers who aim to make an app that fulfils all your transfer needs within minimum time and with minimum efforts.  We vision to match up the smart needs of the world by making smart transfer connectivity across screens.  We are improving every day to cater you with the best of your needs.  We are always open to feedback and queries.</string>
+    <string name="text_helpSummary">1. Setup Your Profile, As it Will be Shown to Other User during Transfer.\n\n
+    2. Share D requires some permissions to function effectively and efficiently,So Allow Us all the Permission for the Proper Functioning of App.\n\n
+    3. SEND Button will Allows you to Send Files From your Device as of you will be the Host and have to Turn on your Hotspot.\n\n
+    4. RECEIVE Button will allow you to receive files Send by Scanning QR Code.\n\n
+    5. Share History will Show you all the Transfer performed by you.\n\n
+    6. File Manager Screen will Provide you Easy Access to your Device Files and make it easy to manage Files.\n\n
+    7. For Faster Transfer Switch Off Mobile Network.\n\n
+    - For Feedback and Queries.</string>
 </resources>

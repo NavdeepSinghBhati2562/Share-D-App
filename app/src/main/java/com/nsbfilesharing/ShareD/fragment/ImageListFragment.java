@@ -81,7 +81,7 @@ public class ImageListFragment
                                 @Override
                                 public void onClick(View v)
                                 {
-                                    performLayoutClickOpen(clazz);
+                                    performLayoutLongClick(clazz);
                                 }
                             });
                     visitView.setOnLongClickListener(new View.OnLongClickListener()
@@ -89,7 +89,8 @@ public class ImageListFragment
                         @Override
                         public boolean onLongClick(View v)
                         {
-                            return performLayoutLongClick(clazz);
+
+                            return  performLayoutClickOpen(clazz);
                         }
                     });
 

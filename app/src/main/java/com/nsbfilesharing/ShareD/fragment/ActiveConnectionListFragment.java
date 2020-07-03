@@ -104,6 +104,7 @@ public class ActiveConnectionListFragment extends EditableListFragment<ActiveCon
                             @Override
                             public void onClick(View v)
                             {
+
                                 performLayoutClickOpen(clazz);
                             }
                         });

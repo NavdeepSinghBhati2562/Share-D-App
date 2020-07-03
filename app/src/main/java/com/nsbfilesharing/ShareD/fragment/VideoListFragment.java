@@ -77,7 +77,8 @@ public class VideoListFragment
                                 @Override
                                 public void onClick(View v)
                                 {
-                                    performLayoutClickOpen(clazz);
+
+                                    performLayoutLongClick(clazz);
                                 }
                             });
 
@@ -86,7 +87,7 @@ public class VideoListFragment
                         @Override
                         public boolean onLongClick(View v)
                         {
-                            return performLayoutLongClick(clazz);
+                            return performLayoutClickOpen(clazz);
                         }
                     });
 

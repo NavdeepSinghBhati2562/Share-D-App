@@ -203,11 +203,11 @@ public class HomeActivity
         }
         else if (R.id.helpBtn == mChosenMenuItemId)
         {
-
+            startActivity(new Intent(HomeActivity.this,HelpActivity.class));
         }
         else if (R.id.aboutBtn== mChosenMenuItemId)
         {
-
+            startActivity(new Intent(HomeActivity.this,AboutUsActivity.class));
         }
 //        else if (R.id.menu_activity_main_manage_devices == mChosenMenuItemId) {
 //            startActivity(new Intent(this, ManageDevicesActivity.class));

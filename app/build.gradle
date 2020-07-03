@@ -103,6 +103,7 @@ task copyHebrewResources(type: Copy) {
 preBuild.dependsOn copyHebrewResources
 
 dependencies {
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
     testImplementation 'junit:junit:4.12'
     implementation fileTree(include: ['*.jar'], dir: 'libs')
 
